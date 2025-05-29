@@ -1,0 +1,32 @@
+/* main fonts */
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TTHakgyoansimUsanR";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_keris@1.0/TTHakgyoansimUsanR.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SinchonRhapsody";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2503@1.0/SinchonRhapsody.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Jp fonts */
+@font-face {
+  font-family: "CHIKARA-YOWAKU";
+  src: url("../fonts/851CHIKARA-YOWAKU_002.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Mukasi-Mukasi";
+  src: url("../fonts/gomarice_mukasi_mukasi.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
