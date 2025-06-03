@@ -596,6 +596,7 @@ section{
           background-color: $Sunset-Orange;
           font-weight: bold; color: $White;
           border: 1px solid $Sunset-Orange;
+          cursor: pointer;
         }
         .end-event{
           border: 1px solid $Sunset-Orange;
@@ -604,13 +605,16 @@ section{
           border-radius: 30px 30px 0 0;
           color: rgba(0, 0, 0, 0.438);
           margin-left: -4px;
+          cursor: pointer;
         }
       }
       .event-big-box{
+        width: 1160px;
         border: 1px solid $Sunset-Orange;
         margin-top: 22px; border-radius: 0 15px 15px 15px;
+        margin-bottom: 150px; display: flex;
+        justify-content: center; 
         #defaultMessage{
-          border: 1px solid #000;
           padding: 300px; font-size: 22px;
           font-weight: bold;
           line-height: 50px;
@@ -625,20 +629,90 @@ section{
           }
         }
         .event-section-item{
+          padding: 50px; 
           .event-card{
+            width: 1004px; height: 385px;
+            margin-bottom: 30px; border-radius: 15px;
+            background-color: $Moss-Green-Light;
+            display: flex; justify-content: space-between;
+            gap: 20px; align-items: center;
             .card-img{
-              img{}
-              span{}
+              position: relative;
+              img{
+                width: 239px; height: 325px;
+                margin-left: 20px;
+              }
+              span{
+                position: absolute;
+                padding: 10px; width: 70px;
+                align-items: center;
+                background-color: $Sunset-Orange;
+                border-radius: 0 15px 15px 0;
+                font-size: 25px; color: $White;
+                left: 20px; top: 20px;
+              }
             }
             .card-content{
+              width: 707px; margin-right: 20px;
+              height: 320px; background-color: $White;
+              padding: 30px; box-sizing: border-box;
               .card-content-title{
-                h2{}
-                span{}
+                display: flex;
+                margin-bottom: 10px;
+                h2{
+                  font-size: 24px;
+                  font-weight: bold;
+                  margin-right: 10px;
+                }
+                span{
+                  color: $Sunset-Orange;
+                  margin-top: 5px;
+                  margin-left: 10px;
+                }
               }
-              .span{}
-              p{}
-              .show-btn{}
-              .site-btn{}
+              span{
+                color: $Moss-Green;
+                display: inline-block;
+                margin-bottom: 5px;
+              }
+              p{
+                margin-top: 10px;
+                margin-bottom: 20px;
+                height: 120px;
+                overflow: hidden;
+                white-space: wrap;
+                text-overflow: ellipsis;
+                line-height: 20px;
+              }
+              .show-btn{
+                width: 130px;
+                padding: 10px 20px;
+                border-radius: 50px;
+                font-size: 18px;
+                background-color: $White;
+                border: 1px solid $Moss-Green;
+                color: $Moss-Green;
+                margin-right: 10px;
+                cursor: pointer;
+                &:hover{
+                  background-color: $Moss-Green;
+                  color: $White;
+                }
+              }
+              .site-btn{
+                width: 130px;
+                padding: 10px 20px;
+                border-radius: 50px;
+                font-size: 18px;
+                background-color: $Moss-Green;
+                color: $White;
+                cursor: pointer;
+                &:hover{
+                  background-color: $White;
+                  color: $Moss-Green;
+                  border: 1px solid $Moss-Green;
+                }
+              }
             }
           }
         }

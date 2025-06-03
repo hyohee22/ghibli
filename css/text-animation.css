@@ -1,5 +1,6 @@
 @charset "UTF-8";
-/* Import Local SCSS Files */ /* color */
+/* Import Local SCSS Files */
+/* color */
 /* fonts */
 /* font size */
 /* Reset */
@@ -1328,6 +1329,7 @@ section {
   font-weight: bold;
   color: #FFFFFF;
   border: 1px solid #F0A25C;
+  cursor: pointer;
 }
 .ghibli-event .event-inner .events-section-items .events-title-box .end-event {
   border: 1px solid #F0A25C;
@@ -1336,14 +1338,22 @@ section {
   border-radius: 30px 30px 0 0;
   color: rgba(0, 0, 0, 0.438);
   margin-left: -4px;
+  cursor: pointer;
 }
 .ghibli-event .event-inner .events-section-items .event-big-box {
+  width: 1160px;
   border: 1px solid #F0A25C;
   margin-top: 22px;
   border-radius: 0 15px 15px 15px;
+  margin-bottom: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .ghibli-event .event-inner .events-section-items .event-big-box #defaultMessage {
-  border: 1px solid #000;
   padding: 300px;
   font-size: 22px;
   font-weight: bold;
@@ -1358,6 +1368,117 @@ section {
 .ghibli-event .event-inner .events-section-items .event-big-box #defaultMessage em {
   font-size: 20px;
 }
+.ghibli-event .event-inner .events-section-items .event-big-box .event-section-item {
+  padding: 50px;
+}
+.ghibli-event .event-inner .events-section-items .event-big-box .event-section-item .event-card {
+  width: 1004px;
+  height: 385px;
+  margin-bottom: 30px;
+  border-radius: 15px;
+  background-color: #D1DAAC;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.ghibli-event .event-inner .events-section-items .event-big-box .event-section-item .event-card .card-img {
+  position: relative;
+}
+.ghibli-event .event-inner .events-section-items .event-big-box .event-section-item .event-card .card-img img {
+  width: 239px;
+  height: 325px;
+  margin-left: 20px;
+}
+.ghibli-event .event-inner .events-section-items .event-big-box .event-section-item .event-card .card-img span {
+  position: absolute;
+  padding: 10px;
+  width: 70px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #F0A25C;
+  border-radius: 0 15px 15px 0;
+  font-size: 25px;
+  color: #FFFFFF;
+  left: 20px;
+  top: 20px;
+}
+.ghibli-event .event-inner .events-section-items .event-big-box .event-section-item .event-card .card-content {
+  width: 707px;
+  margin-right: 20px;
+  height: 320px;
+  background-color: #FFFFFF;
+  padding: 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.ghibli-event .event-inner .events-section-items .event-big-box .event-section-item .event-card .card-content .card-content-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 10px;
+}
+.ghibli-event .event-inner .events-section-items .event-big-box .event-section-item .event-card .card-content .card-content-title h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+.ghibli-event .event-inner .events-section-items .event-big-box .event-section-item .event-card .card-content .card-content-title span {
+  color: #F0A25C;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+.ghibli-event .event-inner .events-section-items .event-big-box .event-section-item .event-card .card-content span {
+  color: #7A8450;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+.ghibli-event .event-inner .events-section-items .event-big-box .event-section-item .event-card .card-content p {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  height: 120px;
+  overflow: hidden;
+  white-space: wrap;
+  text-overflow: ellipsis;
+  line-height: 20px;
+}
+.ghibli-event .event-inner .events-section-items .event-big-box .event-section-item .event-card .card-content .show-btn {
+  width: 130px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 18px;
+  background-color: #FFFFFF;
+  border: 1px solid #7A8450;
+  color: #7A8450;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.ghibli-event .event-inner .events-section-items .event-big-box .event-section-item .event-card .card-content .show-btn:hover {
+  background-color: #7A8450;
+  color: #FFFFFF;
+}
+.ghibli-event .event-inner .events-section-items .event-big-box .event-section-item .event-card .card-content .site-btn {
+  width: 130px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 18px;
+  background-color: #7A8450;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+.ghibli-event .event-inner .events-section-items .event-big-box .event-section-item .event-card .card-content .site-btn:hover {
+  background-color: #FFFFFF;
+  color: #7A8450;
+  border: 1px solid #7A8450;
+}
+
 /* -------------------------------------------------------------- */
 @media (max-width: 768px) {
   /* banner */
@@ -1396,9 +1517,9 @@ section {
     margin-bottom: 30px;
   }
   .comperny-data .comperny-data-inner .comperny-container .comperny-item.item1,
-.comperny-data .comperny-data-inner .comperny-container .comperny-item.item2,
-.comperny-data .comperny-data-inner .comperny-container .comperny-item.item3,
-.comperny-data .comperny-data-inner .comperny-container .comperny-item.item4 {
+  .comperny-data .comperny-data-inner .comperny-container .comperny-item.item2,
+  .comperny-data .comperny-data-inner .comperny-container .comperny-item.item3,
+  .comperny-data .comperny-data-inner .comperny-container .comperny-item.item4 {
     grid-column: auto;
     width: 100%;
   }
