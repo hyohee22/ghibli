@@ -1,0 +1,817 @@
+/* Import Local SCSS Files */
+@import 'variables', 'reset', 'fonts', 'header', 'footer';
+
+[class*=inner]{ width: 1160px;margin: auto; }
+/* ############ Common CSS ############*/
+/* -------------------- Common CSS -------------------- */
+// 가로 스크롤 제거
+body{
+  overflow-x: hidden;
+}
+
+// section
+section{
+  height: auto;
+  align-items: center;
+}
+
+// inner
+[class*=inner]{
+  width: 1160px;
+  height: inherit;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* -------------------- banner -------------------- */
+.banner{
+  .header-banner{
+    width: 100vw; height: 680px;
+    border-top: 2px dashed rgba(0, 0, 0, 0.39);
+    border-bottom: 2px dashed rgba(0, 0, 0, 0.39);
+    .header-banner-title{
+      .each-title-wrap01{
+        text-wrap: nowrap; margin: 40px 0;
+        animation: scrollText1 60s linear infinite;
+        span{
+          font-size: 100px;
+          font-family: $Title-Font;
+          color: transparent;
+          -webkit-text-stroke: 1px rgb(0, 0, 0);
+          .each-title{
+            &.point01{color: $Smoky-Blue;}
+            &.point02{color: $Sakura-Pink;}
+            &.point03{color: $Clay-Brown;}
+            &.point04{color: $Sunset-Orange;}
+          }
+        }
+      }
+      @keyframes scrollText1 {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+      .each-title-wrap02{
+        text-wrap: nowrap; margin: 40px 0;
+        animation: scrollText2 60s linear infinite;
+        span{
+          font-size: 100px;
+          font-family: $Title-Font;
+          color: transparent;
+          -webkit-text-stroke: 1px rgb(0, 0, 0);
+          .each-title{
+            &.point01{color: $Smoky-Blue;}
+            &.point02{color: $Sakura-Pink;}
+            &.point03{color: $Clay-Brown;}
+            &.point04{color: $Sunset-Orange;}
+          }
+        }
+      }
+      @keyframes scrollText2 {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+    }
+    .header-banner-inner{
+      width: 1160px; margin: auto;
+      height: 340px;
+      display: flex; flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+      .banner-title{
+        font-size: 64px;
+        font-family: $Title-Font;
+      }
+      img{
+        z-index: 2300; 
+        width: 600px; 
+        &.kiki{
+          width: 400px;
+        }
+      }
+    }
+  }
+}
+
+// 부스러기
+.breadcrumb{
+  width: 1160px; margin: auto;
+  margin-top: 20px;
+  display: flex;
+  li{
+    margin-right: 10px;
+    a{
+      font-weight: bold;
+      transition: .5s;
+      color: $Pure-Black;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    i{
+      color: $Pure-Black;
+    }
+  }
+}
+
+/* -------------------- ghibli-data -------------------- */
+.comperny-data{
+  .comperny-data-inner{
+    width: 1160px; margin: auto;
+    margin-top: 110px;
+    .date{font-size: 13px; margin-bottom: 5px;}
+    .comperny-table{
+      height: 1000px;
+      border: none; border-top: 3px solid $Moss-Green;
+      tr{
+        border-bottom: 1px dashed $Moss-Green;
+        th{
+          font-size: 18px;
+        }
+        td{text-align: center;}
+      }
+    }
+    .comperny-container{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      .comperny-item{
+        position: relative;
+        overflow: hidden;
+        img{
+          width: 100%; height: 400px;
+          display: block;
+        }
+        .overrlay{
+          position: absolute;
+          top: 0; left: 0; right: 0; bottom: 0;
+          background: rgba(0, 0, 0, 0.39);
+          opacity: 1;
+          transition: 0.3s;
+          &:hover{
+            opacity: 0;
+          }
+        }
+        .item-title{
+          position: absolute;
+          bottom: 10px; left: 10px;
+          color: #fff;
+          .conperny-title{
+            font-size: 20px;
+            font-weight: bold;
+            margin-right: 5px;
+          }
+          span{}
+        }
+        &.item1 {grid-column: 1 / span 1;}
+        &.item2 {grid-column: 2 / span 2;}
+        &.item3 {grid-column: 1 / span 2;}
+        &.item4 {grid-column: 3 / span 1;}
+      }
+    }
+  }
+}
+/* -------------------- ghibli-news -------------------- */
+.ghibil-news{
+  .ghibil-news-inner{
+    width: 1160px; margin: auto;
+    .search-box{
+      text-align: center;
+      margin-top: 100px;
+      label{
+        position: relative;
+        input{
+          width: 550px; height: 60px;
+          border: 5px solid $Moss-Green;
+          border-radius: 50px;
+          font-size: 20px;
+          background-color: $White;
+          &::placeholder{
+            font-size: 20px;  text-align: center;
+          }
+        }
+        button{
+          position: absolute;
+          right: 25px; top: -4px;
+          cursor: pointer;
+        i{
+          font-size: 2rem;
+          color: $Moss-Green;
+          display: block;
+          margin-top: -2.5px;
+          background-color: $White;
+        }
+        }
+      }
+    }
+    .news-container{
+      margin-top: 100px;
+      display: grid;
+      grid-template-columns: auto auto auto;
+    }
+    .news-card{
+      width: 368px; height: 310px;
+      position: relative;
+      margin-bottom: 40px;
+      &.has-new{
+        &::after{
+        content: '';
+        width: 30px; height: 20px;
+        background: url(../images/new.png) no-repeat center;
+        border-radius: 5px;
+        margin-left: 5px;
+        position: absolute;
+        right: 0px; top: 189px;
+        padding: 2px 5px;
+        color: #fff;
+        } 
+      }
+      &:hover img{
+        transform: scale(1.08);
+        }
+      .img-wrapper{
+        width: 100%; height: 180px;
+        border-radius: 15px;
+        overflow: hidden;
+        img{
+        width: 100%; height: 100%;
+        transition: transform 0.3s ease;
+      }
+      }
+      h2{
+        width: 89%;
+        overflow: hidden;
+        white-space: nowrap; 
+        text-overflow: ellipsis;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 10px 0;
+      }
+      p{
+        width: 100%; height: 72px;
+        font-size: 15px;
+        line-height: 23px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+      }
+      span{color: $Moss-Green;}
+    }
+    .more-btn{
+      border: 1px solid #000;
+      padding: 10px 40px;
+      margin: auto; border: none;
+      background-color: $Moss-Green;
+      border-radius: 50px;
+      color: $White;
+      margin-bottom: 60px;
+      font-size: 20px;
+      &:hover{
+        background-color: $Moss-Green-Light;
+        color: $Moss-Green;
+      }
+    }
+    .link-btn1{
+      width: 100%; height: 160px;
+      background: url(../images/ghibli-park-logo.png) no-repeat center;
+      background-size: 40%;
+      border-radius: 15px;
+      box-shadow: 1px 1px 10px rgba(104, 104, 104, 0.388);
+      margin-bottom: 30px;
+      transition: 0.3s;
+      &:hover{
+        transform: translateY(-10px);
+      }
+    }
+    .link-btn2{
+      width: 100%; height: 160px;
+      background: url(../images/ghibli-museum-logo.png) no-repeat center;
+      background-size: 40%;
+      border-radius: 15px;
+      box-shadow: 1px 1px 10px rgba(104, 104, 104, 0.388);
+      margin-bottom: 30px;
+      transition: 0.3s;
+      &:hover{
+        transform: translateY(-10px);
+      }
+    }
+  }
+}
+
+/* -------------------- ghibli-QnA -------------------- */
+.qna{
+  .qna-inner{
+    width: 1160px; margin: auto;
+    .qna-accordion-wrap {
+      margin-top: 88px;
+      .qna-accordion-item {
+        width: 100%; 
+        border-bottom: 1px solid $Moss-Green;
+        &:nth-child(1){
+        border-top: 1px solid $Moss-Green;
+        }
+        .qna-accordion-title {
+          height: 75px;
+          background-color: $White;
+          font-size: $h4-px;
+          box-sizing: border-box;
+          padding: 20px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          cursor: pointer;
+          margin-top: 0;
+          .qna-accordion-title-point1{
+            font-size: 32px; color: $Sunset-Orange;
+          }
+          &:hover {
+            background-color: $Sunset-Orange;
+            &:hover .qna-accordion-title-point1{
+            color: $White;
+            }
+            & .qna-accordion-title-question{
+              color: $White;
+            }
+            & i{
+              color: $White;
+            }
+          }
+          
+          &.active {
+            color: $White;
+            background-color: $Sunset-Orange;
+            font-weight: bold;
+            & .qna-accordion-title-point1{
+              color: $White;
+            }
+          }
+          i {
+            transition: transform 0.3s ease;
+            font-size: 20px; 
+          }
+          &.active i {
+            transform: rotate(180deg); 
+          }
+          .qna-accordion-title-question{
+            margin-right: auto; 
+            margin-left: 30px;
+            margin-top: 2px;
+            font-size: 1.5rem;
+          }
+        }
+        .qna-accordion-content {
+          opacity: 0;
+          background-color: $Banana;
+          display: flex;
+          justify-content: left;
+          max-height: 0; overflow: visible;
+          visibility: hidden;
+          transition: opacity 0.4s ease;
+          .qna-accordion-title-point2{
+            font-size: 32px; color: $Moss-Green;
+          }
+          p{
+            margin-left: 30px; line-height: 20px;
+            font-size: 18px;
+          }
+        }
+        &.active .qna-accordion-content {
+          padding: 20px;
+          display: flex;
+          max-height: 1000px;
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+    .qna-title{
+      h2{
+        font-size: 32px; font-weight: bold;
+        margin-bottom: 40px; margin-top: 130px;
+      }
+    }
+    .qna-btn-items{
+      display: flex; justify-content: space-between;
+      align-items: center; 
+      .qna-btn-item{
+        width: 375px; height: 130px;
+        border-radius: 15px; background-color: $Sunset-Orange;
+        display: flex;  justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: .3s;
+        &:hover{
+          transform: translateY(-10px);
+          background-color: $White;
+          border: 1px solid $Sunset-Orange;
+        }
+        &:hover i{
+          color: $Sunset-Orange;
+        }
+        &:hover span{
+          color: $Pure-Black;
+        }
+        i{
+          font-size: 40px;
+          color: $White; margin-left: 30px;
+          margin-right: 30px;
+        }
+        span{
+          margin-right: 30px; font-size: 16px;
+          color: $White; text-align: center;
+        }
+      }
+    }
+    form{
+      margin-bottom: 100px;
+      fieldset{
+        border: 1px solid #bebebe70;
+        padding: 40px 100px; background-color: $Banana;
+        border-radius: 15px; width: 960px;
+        em{
+          color: $Sunset-Orange; font-size: 20px;
+          display: inline-block;  
+          margin-left: 10px; padding: 5px 0 0 0;
+        }
+        .name-email{
+          display: flex; justify-content: space-between; align-items: center;
+          margin-bottom: 20px;
+          .name{
+            label{
+            font-size: 20px;
+          }
+          input{
+            margin-left: 20px;
+            width: 380px; height: 40px; background-color: $White;
+            border: 1px solid $Sunset-Orange;
+            border-radius: 15px; font-size: 18px;
+          }
+          }
+          .email{
+            label{
+            font-size: 20px;
+          }
+          input{
+            margin-left: 20px;
+            width: 380px; height: 40px; background-color: $White;
+            border: 1px solid $Sunset-Orange;
+            border-radius: 15px; font-size: 18px;
+          }
+          }
+          
+        }
+        .title{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 20px;
+          label{
+            font-size: 20px;
+        }
+        input{
+          width: 880px; height: 40px; background-color: $White;
+          border: 1px solid $Sunset-Orange;
+          border-radius: 15px; font-size: 18px;
+        }
+        }
+        .content{
+          display: flex; align-items: flex-start;
+          justify-content: space-between;
+          label{
+            font-size: 20px;
+          }
+          textarea{
+          width: 880px; background-color: $White;
+          border: 1px solid $Sunset-Orange; height: 110px;
+          border-radius: 15px; font-size: 18px;
+          }
+        }
+        button{
+          display: flex; justify-content: center;
+          border: 1px solid $Sunset-Orange; margin: auto;
+          margin-top: 50px; padding: 10px 50px;
+          border: none; border-radius: 50px;
+          background-color: $Sunset-Orange;
+          color: $White; font-size: 20px;
+          cursor: pointer;
+          &:hover{
+            background-color: $White;
+            border: 1px solid $Sunset-Orange;
+            color: $Sunset-Orange;
+          }
+      }
+      }
+    }
+  }
+}
+/* -------------------- ghibli-event -------------------- */
+.ghibli-event{
+  .event-inner{
+    width: 1160px; margin: auto;
+    .calendar-container{
+      margin-top: 100px;
+      .header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px; width: 1160px;
+        margin-bottom: 10px;
+        #prevMonthBtn{
+          border-radius: 50%;
+          padding: 10px 13px;
+          border: 1px solid $Moss-Green;
+          color: $Moss-Green; background-color: $Moss-Green-Light;
+          cursor: pointer;
+        }
+        #monthTitle{
+          font-size: 36px;
+          font-weight: bold;
+        }
+        #nextMonthBtn{
+          border-radius: 50%;
+          padding: 10px 13px;
+          border: 1px solid $Moss-Green;
+          color: $Moss-Green; background-color: $Moss-Green-Light;
+          cursor: pointer;
+        }
+      }
+      .weekdays{
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        width: 1160px; margin: auto;
+        font-weight: bold;
+        text-align: center;
+        user-select: none;
+        border-bottom: 4px solid $Moss-Green;
+        color: $Moss-Green;
+        padding: 10px 0;
+        div{font-size: 30px;}
+      }
+      .calendar{
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 0;
+        width: 1160px; height: 500px;
+        margin: auto;
+        .day {
+          border: 1px solid rgba(0, 0, 0, 0.13);
+          background-color: #fff;
+          padding: 30px;
+          font-size: 27px;
+          font-weight: bold;
+          color: $Moss-Green;
+          cursor: pointer;
+          text-align: center;
+          user-select: none;
+          &:hover{
+            color: $Sunset-Orange;
+            background-color: rgb(231, 243, 217);
+          }
+          &.next-month {
+            color: lightgray;
+            opacity: 0.5;
+            cursor: default;
+          }
+        }
+      }
+    }
+    .events-section-items{
+      margin-top: 200px;
+      .events-title-box{
+        display: inline-block;
+        .ing-event{
+          padding: 20px;
+          font-size: 26px;
+          border-radius: 30px 30px 0 0;
+          background-color: $Sunset-Orange;
+          font-weight: bold; color: $White;
+          border: 1px solid $Sunset-Orange;
+        }
+        .end-event{
+          border: 1px solid $Sunset-Orange;
+          padding: 20px;
+          font-size: 26px;
+          border-radius: 30px 30px 0 0;
+          color: rgba(0, 0, 0, 0.438);
+          margin-left: -4px;
+        }
+      }
+      .event-big-box{
+        border: 1px solid $Sunset-Orange;
+        margin-top: 22px; border-radius: 0 15px 15px 15px;
+        #defaultMessage{
+          border: 1px solid #000;
+          padding: 300px; font-size: 22px;
+          font-weight: bold;
+          line-height: 50px;
+          text-align: center;
+          i{
+            font-size: 60px;
+            padding: 30px;
+            color: $Sunset-Orange;
+          }
+          em{
+            font-size: 20px;
+          }
+        }
+        .event-section-item{
+          .event-card{
+            .card-img{
+              img{}
+              span{}
+            }
+            .card-content{
+              .card-content-title{
+                h2{}
+                span{}
+              }
+              .span{}
+              p{}
+              .show-btn{}
+              .site-btn{}
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+/* -------------------------------------------------------------- */
+@media (max-width: 768px) {
+  /* banner */
+  .banner {
+    .header-banner {
+      width: 100%;
+      .header-banner-title {
+        .each-title-wrap01 {
+          span {
+            font-size: 80px;
+          }
+        }
+        .each-title-wrap02 {
+          span {
+            font-size: 80px;
+          }
+        }
+      }
+      .header-banner-inner {
+        width: 90%;
+        .banner-title {
+          font-size: px;  // 아마 여긴 단위를 빼먹은 듯! px 대신 예를 들면 24px 이런 식으로 고쳐줘!
+        }
+        img {
+          width: 60%;
+        }
+      }
+    }
+  }
+
+  // 부스러기
+  .breadcrumb {
+    width: 100%;
+    margin-left: 30px;
+  }
+
+  /* ----------- data ---------- */
+  .comperny-data {
+    .comperny-data-inner {
+      width: 90%;
+      margin-top: 80px;
+      .date {
+        font-size: 15px;
+      }
+      .comperny-container {
+        grid-template-columns: 1fr;
+        margin-bottom: 30px;
+        .comperny-item.item1,
+        .comperny-item.item2,
+        .comperny-item.item3,
+        .comperny-item.item4 {
+          grid-column: auto;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  /* ----------- news ---------- */
+  .ghibil-news {
+    .ghibil-news-inner {
+      width: 90%;
+      .news-container {
+        gap: 10px;
+        grid-template-columns: auto auto;
+      }
+      .news-card {
+        width: 325px;
+      }
+    }
+  }
+
+  /* ----------- qna ---------- */
+  .qna{
+   .qna-inner{
+      width: 90%; 
+      .qna-accordion-wrap {
+      .qna-accordion-item {
+        .qna-accordion-title {
+          .qna-accordion-title-question{
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+    .qna-title{
+      h2{
+        font-size: 28px;
+      }
+    }
+    .qna-btn-items{
+      .qna-btn-item{
+        width: 32%; height: 150px;
+        flex-direction: column;
+        i{
+          font-size: 38px;
+          margin-left: 0;
+          margin-right: 0;
+          margin-bottom: 10px;
+        }
+        span{
+          margin-right: 0; font-size: 19px;
+          margin: 0 10px;
+        }
+      }
+    }
+    form{
+      fieldset{
+        width: 85%; padding: 40px;
+        em{
+          font-size: 20px;
+          margin-left: 0; padding: 5px 0 0 0;
+        }
+        .name-email{
+          flex-direction: column;
+          .name{
+            display: flex; width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            label{
+            font-size: 18px;
+          }
+          input{
+            width: 80%; font-size: 18px;
+          }
+          }
+          .email{
+            margin-top: 20px;
+            display: flex; width: 100%;
+            align-items: center;
+            justify-content: space-between;
+            label{
+            font-size: 18px;
+          }
+          input{
+            width: 80%; font-size: 18px;
+          }
+          }
+          
+        }
+        .title{
+          margin-bottom: 20px;
+          label{
+            font-size: 18px;
+        }
+        input{
+          width: 80%; font-size: 18px;
+        }
+        }
+        .content{
+          label{
+            font-size: 18px;
+          }
+          textarea{
+          width: 80%; font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+}

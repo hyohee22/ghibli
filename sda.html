@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <title>이벤트 달력</title>
+    <style>
+        .calendar-container {
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+        .header button {
+            padding: 5px 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .header h2 {
+            margin: 0;
+            user-select: none;
+        }
+        .weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            max-width: 600px;
+            margin: 0 auto 5px auto;
+            font-weight: bold;
+            text-align: center;
+            user-select: none;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            color: #333;
+        }
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .day {
+            border: 1px solid #ccc;
+            padding: 10px;
+            cursor: pointer;
+            text-align: center;
+            user-select: none;
+        }
+        .day.next-month {
+            color: lightgray;
+            opacity: 0.5;
+            cursor: default;
+        }
+        .events-section {
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        .event-card {
+            border: 3px dashed #ff69b4;
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #fff0f5, #ffe4e1);
+            display: none; /* 처음엔 숨김 */
+        }
+        #defaultMessage {
+            color: gray;
+            font-style: italic;
+            text-align: center;
+            margin-top: 20px;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="calendar-container">
+
+    <div class="header">
+        <button id="prevMonthBtn">◀ 이전</button>
+        <h2 id="monthTitle">2025년 6월 이벤트 달력</h2>
+        <button id="nextMonthBtn">다음 ▶</button>
+    </div>
+
+    <div class="weekdays">
+        <div>일</div>
+        <div>월</div>
+        <div>화</div>
+        <div>수</div>
+        <div>목</div>
+        <div>금</div>
+        <div>토</div>
+    </div>
+
+    <div class="calendar" id="calendar"></div>
+    <div class="calendar" id="calendar"></div>
+
+</div>
+
+<div class="events-section" id="eventsSection">
+    <h3>이벤트 상세보기</h3>
+    <p id="defaultMessage">달력을 선택해 이벤트를 보세요</p>
+
+    <!-- 🎟️ 이벤트 티켓 카드 고정 -->
+    <div class="event-card">
+        <h4>🎟️ 티켓 이벤트 1</h4>
+        <p>2025년 6월 스페셜 이벤트 1 설명!</p>
+    </div>
+    <div class="event-card">
+        <h4>🎟️ 티켓 이벤트 2</h4>
+        <p>2025년 6월 스페셜 이벤트 2 설명!</p>
+    </div>
+    <div class="event-card">
+        <h4>🎟️ 티켓 이벤트 3</h4>
+        <p>2025년 6월 스페셜 이벤트 3 설명!</p>
+    </div>
+</div>
+
+<script>
+    const calendarContainer = document.getElementById('calendar');
+    const eventsSection = document.getElementById('eventsSection');
+    const defaultMessage = document.getElementById('defaultMessage');
+    const monthTitle = document.getElementById('monthTitle');
+    const prevMonthBtn = document.getElementById('prevMonthBtn');
+    const nextMonthBtn = document.getElementById('nextMonthBtn');
+
+    const monthsData = {
+        6: { name: '6월', lastDay: 30, firstWeekday: 0 },
+        7: { name: '7월', lastDay: 31, firstWeekday: 2 }
+    };
+
+    let currentYear = 2025;
+    let currentMonth = 6;
+
+    function clearCalendar() {
+        calendarContainer.innerHTML = '';
+        defaultMessage.style.display = 'block';
+    }
+
+    function renderCalendar(year, month) {
+        clearCalendar();
+        monthTitle.textContent = `${year}년 ${monthsData[month].name} 이벤트 달력`;
+
+        const lastDay = monthsData[month].lastDay;
+        const firstWeekday = monthsData[month].firstWeekday;
+        const totalCells = 42;
+
+        for(let i=0; i < firstWeekday; i++) {
+            const emptyDiv = document.createElement('div');
+            emptyDiv.classList.add('day', 'next-month');
+            emptyDiv.innerHTML = `<div></div>`;
+            calendarContainer.appendChild(emptyDiv);
+        }
+
+        for(let day=1; day <= lastDay; day++) {
+            const dayDiv = document.createElement('div');
+            dayDiv.classList.add('day');
+            dayDiv.innerHTML = `
+                <div>${day}</div>
+                <div style="font-size:12px; color: gray;">3개 이벤트</div>
+            `;
+            dayDiv.addEventListener('click', () => {
+                defaultMessage.style.display = 'none';
+                document.querySelectorAll('.event-card').forEach(card => card.style.display = 'block');
+            });
+            calendarContainer.appendChild(dayDiv);
+        }
+
+        const currentCells = firstWeekday + lastDay;
+        for(let i = currentCells + 1; i <= totalCells; i++) {
+            const nextMonthDay = i - currentCells;
+            const nextDiv = document.createElement('div');
+            nextDiv.classList.add('day', 'next-month');
+            nextDiv.innerHTML = `<div>${nextMonthDay}</div>`;
+            calendarContainer.appendChild(nextDiv);
+        }
+    }
+
+    prevMonthBtn.addEventListener('click', () => {
+        if(currentMonth > 6) {
+            currentMonth--;
+            renderCalendar(currentYear, currentMonth);
+        } else {
+            alert('이전 달 정보가 없습니다!');
+        }
+    });
+
+    nextMonthBtn.addEventListener('click', () => {
+        if(currentMonth < 7) {
+            currentMonth++;
+            renderCalendar(currentYear, currentMonth);
+        } else {
+            alert('다음 달 정보가 없습니다!');
+        }
+    });
+
+    renderCalendar(currentYear, currentMonth);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+/* Import Local SCSS Files */
+@import 'variables', 'reset', 'fonts', 'header', 'footer';
+
+[class*=inner]{ width: 1160px;margin: auto; }
+/* ############ Common CSS ############*/
+/* -------------------- Common CSS -------------------- */
+// 가로 스크롤 제거
+body{
+  overflow-x: hidden;
+}
+
+// section
+section{
+  height: 100vh;
+  align-items: center;
+}
+
+// inner
+[class*=inner]{
+  width: 1160px;
+  height: inherit;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+

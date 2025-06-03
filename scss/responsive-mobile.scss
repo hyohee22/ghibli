@@ -1,13 +1,9 @@
 /* Import Local SCSS Files */
 @import 'variables', 'reset', 'fonts', 'header', 'footer';
+
 /* responsive Mobile */
 @media (max-width:767px){
 /* -------------------- Common CSS -------------------- */
-  // 임시
-  body{
-    background: rgb(243, 130, 130);
-  }
-
   // inner
   [class*=inner]{
     width:90%; margin: auto;
@@ -21,82 +17,85 @@
     p{}
     .more-btn{}
   }
-    /* -------- div.music --------- */
-    .music-wrap{
-      display: none;
-    }
+
+  /* -------- div.music --------- */
+  .music-wrap{
+    display: none;
+  }
+
   /* -------- pagenation --------- */
   .pagination-container {
     display: none;
   }
+
   /* -------- header --------- */
-.header{width: 100%;
-    img{
-      width: 100%; height: 60px;
+  .header{width: 100%;
+      img{
+        width: 100%; height: 60px;
+      }
+    .logo-black{
+      margin-left: 10px;
     }
-  .logo-black{
-    margin-left: 10px;
-  }
-  .header-box{
-    margin-right: 10px;
-    .search-box{
-      display: none;
+    .header-box{
+      margin-right: 10px;
+      .search-box{
+        display: none;
+      }
     }
   }
-}
-.global-list{
-  position: absolute; right: 32px; top: 80px;
-}
-.sub-wrap{
-  width: 100%;
-  .close-btn{
-    top: 40px; right: 40px; cursor: pointer;
-    i{font-size: 40px;}
+  .global-list{
+    position: absolute; right: 32px; top: 80px;
   }
-  .sub-menu-inner{
-    width: 80%;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    .sub-menu-items{
-      .sub-menu-item{
-        position: relative;
-        .sub-menu-title{
-          position: absolute;
-          h2{
-            padding: 50px 0;
-            font-size: 36px;
-            text-align: left;
-            position: relative;
-            &::after{
-              content: '';
-                position: absolute;
-                width: 130%; height: 1px;
-                bottom: -10%; left: 0;
-            }
-            &::before{
-              content: '';
-              display: none;
+  .sub-wrap{
+    width: 100%;
+    .close-btn{
+      top: 40px; right: 40px; cursor: pointer;
+      i{font-size: 40px;}
+    }
+    .sub-menu-inner{
+      width: 80%;
+      top: 10%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      .sub-menu-items{
+        .sub-menu-item{
+          position: relative;
+          .sub-menu-title{
+            position: absolute;
+            h2{
+              padding: 50px 0;
+              font-size: 36px;
+              text-align: left;
+              position: relative;
+              &::after{
+                content: '';
+                  position: absolute;
+                  width: 130%; height: 1px;
+                  bottom: -10%; left: 0;
+              }
+              &::before{
+                content: '';
+                display: none;
+              }
             }
           }
-        }
-        .sub-menu-content{
-          position: absolute;
-          margin-left: 0;
-          margin-top: 100px;
-          .sub-menu-content-item{
-            padding: 0;
-            margin-bottom: 103px;
-            a{
-              padding: 7px 11px;
-              font-size: 20px;
+          .sub-menu-content{
+            position: absolute;
+            margin-left: 0;
+            margin-top: 100px;
+            .sub-menu-content-item{
+              padding: 0;
+              margin-bottom: 103px;
+              a{
+                padding: 7px 11px;
+                font-size: 20px;
+              }
             }
           }
         }
       }
     }
   }
-}
 
   /* -------- section.ghibli-main-logo --------- */
   .ghibli-main-logo{
@@ -175,129 +174,133 @@
       }
     }
   }
-    /* -------------------- section: event -------------------- */
-    .event {
-      height: 100%;
-      .event-inner {
-        width: 100%;
-        .main-title {
-          margin-top: 80px;
-        }
-        .event-container {
-          flex-direction: column-reverse;
-          .event-ticket-wrap {
-            .event-ticket-swiper {
-              height: 600px;
-              width: 80%;
-              margin-bottom: 50px;
-              .swiper-wrapper {
-                .swiper-slide {
-                  width: 90%; margin: auto;
-                  background-size: 100%;
+
+  /* -------------------- section: event -------------------- */
+  .event {
+    height: 100%;
+    .event-inner {
+      width: 100%;
+      .main-title {
+        padding-top: 20px;
+        background: transparent;
+      }
+      .event-container {
+        flex-direction: column-reverse;
+        .event-ticket-wrap {
+          .event-ticket-swiper {
+            height: 600px;
+            width: 80%;
+            margin-bottom: 0;
+            .swiper-wrapper {
+              .swiper-slide {
+                width: 90%; margin: auto;
+                background-size: 100%;
+              }
+              .event-ticket-img {
+                width: 40%;
+                img {
+                  width: 70%;
+                  height: 150px;
+                  margin-left: 0;
                 }
-                .event-ticket-img {
-                  width: 40%;
-                  img {
-                    width: 70%;
-                    height: 150px;
-                    margin-left: 0;
-                  }
-                }
-                .event-ticket-info {
-                  margin-top: 20px;
-                  padding: 20px;
-                  margin-left: 0; width: 70%; height: 150px;
-                  .event-ticket-container {
-                    margin-bottom: 5px;
-  
-                    .event-ticket-info-title {
-                      strong {
-                        font-size: 18px;
-                      }
-                    }
-                    .event-ticket-info-btn {
-                      padding: 5px 20px;
-                      background-color: $Moss-Green;
-                      a {
-                        font-size: 14px;
-                      }
+              }
+              .event-ticket-info {
+                margin-top: 20px;
+                padding: 20px;
+                margin-left: 0; width: 70%; height: 150px;
+                .event-ticket-container {
+                  margin-bottom: 5px;
+
+                  .event-ticket-info-title {
+                    strong {
+                      font-size: 18px;
                     }
                   }
-                  .event-ticket-content {
-                    p {
-                      margin-top: 0;
-                      width: 100%;
-                      height: 70%;
+                  .event-ticket-info-btn {
+                    padding: 5px 20px;
+                    background-color: $Moss-Green;
+                    a {
+                      font-size: 14px;
                     }
+                  }
+                }
+                .event-ticket-content {
+                  p{
+                    width: 100%;
+                    -webkit-line-clamp: 4;
                   }
                 }
               }
             }
-            .swiper-button-next {
-              margin-top: 100px;
-              left: 47%;
-              top: 49%;
-            }
-            .swiper-button-prev {
-              margin-top: 205px;
-              left: 47%;
-              top: 0;
-            }
+          }
+          .swiper-button-next {
+            margin-top: 100px;
+            left: 47%;
+            top: 58%;
+          }
+          .swiper-button-prev {
+            margin-top: 205px;
+            left: 47%;
+            top: 12%;
           }
         }
-        .event-calendar-wrap {
-          height: 300px;
+      }
+      .event-calendar-wrap {
+        height: 170px;
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 30px;
+        padding: 0;
+        border-right: none;
+        border-left: none;
+        .event-calendar-inner {
           width: 100%;
-          margin-left: 0;
-          margin-top: 0;
-          border-right: none;
-          border-left: none;
-          .event-calendar-inner {
+          margin-top: 185px;
+          &::before {
+            display: none;
+          }
+          .event-calender-titile {
             width: 100%;
+            height: 30px;
+            line-height: 30px;
+            background-color: $Moss-Green;
+            margin-left: 0;
+            font-size: 24px;
+            text-align: center;
+            color: $White;
             &::before {
               display: none;
             }
-            .event-calender-titile {
-              width: 100%;
-              height: 50px;
-              line-height: 50px;
-              background-color: $Moss-Green;
-              margin-left: 0;
-              font-size: 24px;
-              text-align: center;
-              color: $White;
-              &::before {
-                display: none;
-              }
+          }
+          p{display: none;}
+          .event-calnder-content {
+            margin-top: 0;
+            max-height: 300px;
+            overflow-x: auto;
+            display: flex;
+            &::-webkit-scrollbar {
+              height: 10px;
             }
-            p{display: none;}
-            .event-calnder-content {
-              margin-top: 0;
-              max-height: 300px;
-              overflow-x: auto;
+            &::-webkit-scrollbar-thumb {
+              display: none;
+            }
+            .event-calnder-date {
+              padding: 10px;
               display: flex;
-              &::-webkit-scrollbar {
-                height: 10px;
-              }
-              &::-webkit-scrollbar-thumb {
-                display: none;
-              }
-              .event-calnder-date {
-                padding: 10px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                span {
-                  padding: 5px 10px;
-                  white-space: nowrap;
-                }
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+              span {
+                padding: 5px 10px;
+                white-space: nowrap;
               }
             }
           }
         }
       }
     }
+  }
+
   /* -------------------- section: movie-film -------------------- */
   .movie-film{
     .movie-film-inner{
@@ -311,15 +314,15 @@
       }
       .movie-film-swiper{
         &::before{
-          height: 395px;
+          height: 520px;
           left: -10%; top: -15%;
         }
         &::after{
-          height: 320px;
+          height: 440px;
           left: -10%; top: -12.8%;
         }
         .swiper-wrapper{
-          height: 300px;
+          height: 400px;
           .swiper-slide{
             a{
               &:hover img{}
@@ -334,130 +337,132 @@
       .swiper-button-prev{}
     }
   }
-/* -------------------- section.ghibli-inside -------------------- */
-.ghibli-inside {
-  width: 100vw;
-  height: auto;
-  overflow-x: hidden; 
-  .ghibli-inside-inner {
-    width: 90%;
-    padding: 20px 0;
+
+  /* -------------------- section.ghibli-inside -------------------- */
+  .ghibli-inside {
+    width: 100vw;
     height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    box-sizing: border-box;
-    .main-content {
+    overflow-x: hidden; 
+    .ghibli-inside-inner {
+      width: 90%;
+      padding: 20px 0;
+      height: auto;
+      display: flex;
       flex-direction: column;
-      padding: 15px;
-      width: 100%;
-      gap: 0;
+      justify-content: flex-start;
+      align-items: center;
       box-sizing: border-box;
-      #main-image {
-        height: 300px;
+      .main-content {
+        flex-direction: column;
+        padding: 15px;
         width: 100%;
-        max-width: 100%;
-        object-fit: cover;
-        overflow: hidden;
-        display: block;
-      }
-      .content {
-        width: 100%;
-        .main-sec-title {
-          display: flex;
-          justify-content: space-between;
-          h2 {
-            margin-top: 7px;
-            font-size: 32px;
+        gap: 0;
+        box-sizing: border-box;
+        #main-image {
+          height: 300px;
+          width: 100%;
+          max-width: 100%;
+          object-fit: cover;
+          overflow: hidden;
+          display: block;
+        }
+        .content {
+          width: 100%;
+          .main-sec-title {
+            margin-top: 13px;
+            display: flex;
+            justify-content: space-between;
+            h2 {
+              margin-top: 7px;
+              font-size: 32px;
+            }
+          }
+          #description {
+            -webkit-line-clamp: 4;
+            overflow: hidden;
           }
         }
-        #description {
-          -webkit-line-clamp: 4;
-          overflow: hidden;
-        }
       }
-    }
-    .thumbnails {
-      flex-wrap: wrap;
-      margin-top: 20px;
-      width: 100%;
-      box-sizing: border-box;
-      .thumb-wrapper {
-        flex: 1 0 calc(32% - 10px);
-        max-width: calc(32% - 10px);
-        margin-bottom: 15px;
+      .thumbnails {
+        flex-wrap: wrap;
+        margin-top: 20px;
+        width: 100%;
         box-sizing: border-box;
-        &:nth-child(3),
-        &:nth-child(6) {
-          margin-right: 0;
-        }
-        img {
-          height: 120px; 
-          object-fit: cover; 
+        .thumb-wrapper {
+          flex: 1 0 calc(32% - 10px);
+          max-width: calc(32% - 10px);
+          margin-bottom: 15px;
+          box-sizing: border-box;
+          &:nth-child(3),
+          &:nth-child(6) {
+            margin-right: 0;
+          }
+          img {
+            height: 120px; 
+            object-fit: cover; 
+          }
         }
       }
     }
   }
-}
 
   /* -------------------- map-------------------- */
-.map{
-  .map-wrap{
-    .map-inner{
-      width: 100%; height: 90%;
-      .map-container{
-        .map-point-img{
-          img{
-            width: 100%;
-          }
-        }
-        .map-point{
-          .map-point-title{
-            font-size: 1.3rem;
-            -webkit-text-stroke: 1px rgb(255, 255, 255);
-            .point-title1{
-              position: absolute;
-              top: 65%; left: 15%;
-            }
-            .point-title2{
-              position: absolute;
-              top: 35%; right: 45%;
+  .map{
+    .map-wrap{
+      .map-inner{
+        width: 100%; height: 90%;
+        .map-container{
+          .map-point-img{
+            img{
+              width: 100%;
             }
           }
-          .map-point-ping{
-            .ping1{
-              width: 30px;
-              position: absolute;
-              top: 50%; left: 22%;
+          .map-point{
+            .map-point-title{
+              font-size: 1.3rem;
+              -webkit-text-stroke: 1px rgb(255, 255, 255);
+              .point-title1{
+                position: absolute;
+                top: 65%; left: 15%;
+              }
+              .point-title2{
+                position: absolute;
+                top: 35%; right: 45%;
+              }
             }
-            .ping2{
-              width: 30px;
-              position: absolute;
-              top: 20%; right: 50%;
-              animation: ping 2s infinite ease-in-out;
+            .map-point-ping{
+              .ping1{
+                width: 30px;
+                position: absolute;
+                top: 50%; left: 22%;
+              }
+              .ping2{
+                width: 30px;
+                position: absolute;
+                top: 20%; right: 50%;
+                animation: ping 2s infinite ease-in-out;
+              }
             }
           }
         }
       }
-    }
-    .map-mini-item{
-      display: none;
+      .map-mini-item{
+        display: none;
+      }
     }
   }
-}
-  /* -------------------- email -------------------- */
 
-.email {
-  .email-inner {
-    h2 {
-      font-size: 40px;
-    }
-    .email-box {
-      width: 100%;
+  /* -------------------- email -------------------- */
+  .email {
+    .email-inner {
+      h2 {
+        font-size: 40px;
+      }
+      .email-box {
+        width: 100%;
+      }
     }
   }
-}
 
   /* -------------------- footer-------------------- */
   footer {
@@ -483,6 +488,7 @@
       span{}
     }
   }
+
   /* -------------------- top-btn -------------------- */
   #topBtn {
     bottom: 20px;

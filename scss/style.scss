@@ -1,9 +1,7 @@
 /* Import Local SCSS Files */
 @import 'variables', 'reset', 'fonts', 'header', 'footer';
 
-[class*=inner]{ width: 1160px;margin: auto; }
 /* ############ Common CSS ############*/
-/* -------------------- Common CSS -------------------- */
 // 가로 스크롤 제거
 body{
   overflow-x: hidden;
@@ -63,6 +61,7 @@ section{
     }
   }
 }
+
 /* ############ div.music ############*/
 .music-wrap{
   width: 100vw; height: 100vh;
@@ -154,6 +153,8 @@ section{
     }
   }
 }
+
+/* ############ header-include ############*/
 
 /* ############ pagination ############*/
 .pagination-container {
@@ -389,7 +390,7 @@ section{
           position: relative;
           display: flex;
           flex-direction: column;
-          animation: ghibli-about-history-ani linear infinite 50s;
+          animation: ghibli-about-history-ani linear infinite 60s;
           > li{
             width: 48%;
             margin-top: 50px;
@@ -443,7 +444,7 @@ section{
 
 @keyframes ghibli-about-history-ani{
   0%{transform: translateY(50%);}
-  100%{transform: translateY(-200%);}
+  100%{transform: translateY(-120%);}
 }
 
 /* ############ section.notice ############*/
@@ -584,7 +585,7 @@ section{
   }
 }
 
-/* ############ section: event ############*/
+/* ############ section.event ############*/
 .event {
   height: 100vh; background-color: $White;
   overflow: hidden; position: relative;
@@ -592,17 +593,25 @@ section{
     width: 1160px; margin: auto;
     overflow: hidden; height: 100%;
     .main-title {
-      margin-top: 290px;
+      width: 100%;
+      padding-top: 100px;
+      position: absolute;
+      top: 0; left: 50%; transform: translateX(-50%);
+      z-index: 10;
+      background: linear-gradient($White, $White, $White, transparent);
     }
     .event-container {
+      height: 100vh;
       display: flex;
+      align-items: center;
+      position: relative;
       justify-content: space-between;
       .event-ticket-wrap {
         position: relative;
         .event-ticket-swiper {
           position: relative;
           height: 850px; width: 800px;
-          margin-top: 50px;
+          margin-top: 150px;
           overflow: hidden;
           .swiper-wrapper {
             transition-timing-function: ease-in-out;
@@ -645,6 +654,9 @@ section{
                     border-radius: 5px;
                     padding: 10px 25px;
                     background-color: $Moss-Green;
+                    &.soon{
+                      background-color: $Sunset-Orange;
+                    }
                     a{
                       text-decoration: none;
                       color: $White;
@@ -662,13 +674,12 @@ section{
                   }
                   p{
                     margin-top: 10px;
-                    width: 100%; height: 100px;
-                    overflow: hidden;
+                    width: 100%;
                     display: -webkit-box;
+                    -webkit-line-clamp: 7;
                     -webkit-box-orient: vertical;
-                    -webkit-line-clamp: 5;
+                    overflow: hidden;
                     text-overflow: ellipsis;
-                    white-space: normal;
                   }
                 }
               }
@@ -679,7 +690,7 @@ section{
             display: block;
             margin-top: 150px;
             position: absolute;
-            left: 47%; top: 49%;
+            left: 47%; top: 54%;
             border-radius: 50%;
             background-color: rgba($White, .75);
             filter: invert(50);
@@ -702,7 +713,7 @@ section{
             margin-top: 285px;
             display: block;
             position: absolute;
-            left: 47%; top: 0;
+            left: 47%; top:10%;
             border-radius: 50%;
             background-color: rgba(#fff, .75);
             filter: invert(50);
@@ -723,9 +734,9 @@ section{
         }
       }
       .event-calendar-wrap {
-        height: 100vh; width: 400px;
+        padding-top: 300px;
+        height: 85%; width: 400px;
         margin-left: 100px;
-        margin-top: -200px;
         border-right: 15px solid $Moss-Green-Light;
         border-left: 15px solid $Moss-Green-Light;
         .event-calendar-inner {
@@ -733,22 +744,16 @@ section{
           margin-top: 30px;
           position: relative;
           .event-calender-titile {
-            font-size: 28px;
+            padding: 20px 0;
+            font-size: 32px;
             font-weight: bold;
             text-decoration: none;
             margin-left: 30px;
             color: $Moss-Green;
-            padding: 25px 0;
-            &::before{
-              content: '';
-              display: block;
-              width: 160px; height: 1px;
-              background-color: $Moss-Green;
-              position: absolute;
-              top: 120px; left: 20px;
-            }
           }
           p{
+          padding-top: 20px;
+            border-top: 1px solid $Moss-Green;
             font-size: 13px;
             text-align: center;
           }
@@ -787,7 +792,7 @@ section{
     }
   }
 
-/* ############ section: movie-film ############*/
+/* ############ section.movie-film ############*/
 .movie-film{
   width: 100vw;
   background-color: $Moss-Green-Light;
@@ -897,7 +902,7 @@ section{
   }
 }
 
-/* ############ ghibli-inside ############*/
+/* ############ section.ghibli-inside ############*/
 .ghibli-inside {
   width: 100vw;
   height: 100vh;
@@ -1035,9 +1040,7 @@ section{
   }
 }
 
-
-
-/* ############ section: map ############*/
+/* ############ section.map ############*/
 .map{
   .map-wrap{
     width: 100vw; height: 100%;
@@ -1150,8 +1153,7 @@ section{
   }
 }
 
-/* ############ section: email ############*/
-
+/* ############ section.email ############*/
 .email {
   position: relative;
   background: $Moss-Green;

@@ -2,6 +2,7 @@
   height: 100px; width: 1920px; margin: auto;
   display: flex; justify-content: space-between;
   align-items: center;
+  position: relative;
   .logo-black{
     margin-left: 200px;
   }
@@ -10,6 +11,7 @@
     }
   .header-box{
     display: flex;
+    justify-self: flex-end;
     gap: 20px;
     align-items: center;
     margin-right: 200px;
@@ -38,14 +40,14 @@
     i{font-size: 1.8rem; color: $Moss-Green;}
   }
   .hamburger-btn{
-    i{font-size: 1.8rem; color: $Moss-Green;}
+    i{font-size: 40px; color: $Moss-Green;}
   }
   }
 }
 .global-list{
   display: none; border-radius: 30px;
   background-color: $Moss-Green-Light;
-  position: absolute; right: 215px; top: 80px;
+  position: absolute; right: 227px; top: 80px;
   ul{
     position: relative;
     li{
@@ -68,7 +70,7 @@
         left: 35px;
         border-width: 10px;
         border-style: solid;
-       border-color: transparent transparent $Moss-Green-Light transparent; 
+        border-color: transparent transparent $Moss-Green-Light transparent; 
       }
     }
   }
@@ -79,161 +81,6 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
-  z-index: 999;
-  background-color: rgba($color: $Moss-Green-Light, $alpha: 0.9);
-  .close-btn{
-    font-size: 50px;
-    color: #fff;
-    color: $Moss-Green;
-    position: absolute;
-    top: 50px; right: 130px;
-    cursor: pointer;
-  }
-  .sub-menu-inner{
-    width: 1160px;
-    margin: auto;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    .sub-menu-items{
-      .sub-menu-item{
-        display: flex;
-        justify-content: space-between;
-        .sub-menu-title{
-          position: relative;
-          h2{
-            padding: 20px;
-            font-size: 36px;
-            font-family: $Title-Font;
-            flex: 2;
-            text-align: right;
-            position: relative;
-            &::after{
-              content: '';
-                position: absolute;
-                width: 1160px; height: 1px;
-                bottom: 0; left: 0;
-                display: block;
-                background-color: $Moss-Green;
-            }
-            &::before{
-              content: '';
-              position: absolute;
-              width: 1px; height: 50px;
-              top: 15px; left: 370px;
-              display: block;
-              background-color: $Moss-Green;
-            }
-          }
-        }
-        .sub-menu-content{
-          flex: 4;
-          margin-left: 20px;
-          .sub-menu-content-item{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 5px;
-            a{
-              font-size: 24px;
-              display: inline-block;
-              padding: 20px 50px 22px 20px;
-              &:hover{
-                background: url(../images/main-hover-paint.png) no-repeat center center;
-                background-size: contain;
-                color: #fff;
-                font-weight: bold;
-                transition: all 0.3s ease;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}.header{
-  height: 100px; width: 1920px;
-  display: flex; justify-content: space-between;
-  border: 1px solid #000; align-items: center;
-  .logo-black{
-    margin-left: 200px;
-  }
-    img{
-      height: 75px; width: 156px;
-    }
-  .header-box{
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    margin-right: 200px;
-    .search-box{
-    label{
-      position: relative;
-      input{
-        width: 252px; height: 40px;
-        border: 3px solid $Moss-Green;
-        border-radius: 50px;
-      }
-      button{
-        position: absolute;
-        right: 20px; top: 0;
-        cursor: pointer;
-      i{
-        font-size: 1.5rem;
-        color: $Moss-Green;
-        display: block;
-        margin-top: -2.5px;
-      }
-      }
-    }
-  }
-  .global-btn{
-    i{font-size: 1.8rem; color: $Moss-Green;}
-  }
-  .hamburger-btn{
-    i{font-size: 1.8rem; color: $Moss-Green;}
-  }
-  }
-}
-.global-list{
-  display: none; border-radius: 30px;
-  background-color: $Moss-Green-Light;
-  position: absolute; right: 215px; top: 80px;
-  ul{
-    position: relative;
-    li{
-      a{
-        display: block;
-        padding: 15px;
-        border-bottom: 1px solid $Moss-Green;
-        text-align: center; color: $Moss-Green;
-        &:hover{
-          font-weight: bold;
-        }
-      }
-      &:nth-child(3) a{
-        border-bottom: none;
-      }
-      &::after{
-        content: '';
-        position: absolute; 
-        top: -17px;
-        left: 35px;
-        border-width: 10px;
-        border-style: solid;
-       border-color: transparent transparent $Moss-Green-Light transparent; 
-      }
-    }
-  }
-}
-.sub-wrap{
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
   height: 100vh;
   z-index: 999;
   background-color: rgba($color: $Moss-Green-Light, $alpha: 0.9);
