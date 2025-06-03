@@ -85,11 +85,11 @@ window.addEventListener('resize', updateQnAContent);
 
 /* -------------- event ---------------- */
 const calendarContainer = document.getElementById('calendar');
-const eventsSection = document.getElementById('eventsSection');
-const defaultMessage = document.getElementById('defaultMessage');
 const monthTitle = document.getElementById('monthTitle');
 const prevMonthBtn = document.getElementById('prevMonthBtn');
 const nextMonthBtn = document.getElementById('nextMonthBtn');
+const defaultMessage = document.getElementById('defaultMessage');
+const eventCards = document.getElementById('eventCards');
 
 const monthsData = {
   6: { name: '6월', lastDay: 30, firstWeekday: 0 },
@@ -99,15 +99,19 @@ const monthsData = {
 let currentYear = 2025;
 let currentMonth = 6;
 
+// 달력 초기화
 function clearCalendar() {
   calendarContainer.innerHTML = '';
-  if (defaultMessage) defaultMessage.style.display = 'block'; // 기본 메시지 보임
-  if (eventsSection) eventsSection.style.display = 'none';   // 이벤트 섹션 숨김
+
+  if (defaultMessage) defaultMessage.style.display = 'block';
+  if (eventCards) eventCards.style.display = 'none';
 }
 
+//달력
 function renderCalendar(year, month) {
   clearCalendar();
 
+  // 데이터가 없으면 메시지 출력
   if (!monthsData[month]) {
     monthTitle.textContent = `${year}년 ${month}월 데이터 없음`;
     return;
@@ -118,20 +122,22 @@ function renderCalendar(year, month) {
 
   const totalCells = Math.ceil((firstWeekday + lastDay) / 7) * 7;
 
+  // 시작 요일 전 빈 칸
   for (let i = 0; i < firstWeekday; i++) {
     const emptyCell = document.createElement('div');
     emptyCell.classList.add('day', 'empty');
     calendarContainer.appendChild(emptyCell);
   }
 
+  // 날짜 출력
   for (let day = 1; day <= lastDay; day++) {
     const dayDiv = document.createElement('div');
     dayDiv.classList.add('day');
 
     const weekday = (firstWeekday + day - 1) % 7;
 
-    let dateColor = '#333'; // 기본 컬러
-    let eventColor = '#7A8450'; // 기본 이벤트 컬러
+    let dateColor = '#333'; // 평일 기본색
+    let eventColor = '#7A8450'; // 이벤트 텍스트 색
 
     if (weekday === 0) { // 일요일
       dateColor = '#FF6B6B';
@@ -146,14 +152,16 @@ function renderCalendar(year, month) {
       <div style="font-size:14px; color:${eventColor}; margin-top:10px;">3개 이벤트</div>
     `;
 
+    // 날짜 클릭 시 기본 메시지 숨기고 이벤트 카드 보여주기
     dayDiv.addEventListener('click', () => {
-      if (defaultMessage) defaultMessage.style.display = 'none';  // 기본 메시지 숨김
-      if (eventsSection) eventsSection.style.display = 'block';   // 이벤트 섹션 보이기
+      if (defaultMessage) defaultMessage.style.display = 'none';
+      if (eventCards) eventCards.style.display = 'block';
     });
 
     calendarContainer.appendChild(dayDiv);
   }
 
+  // 마지막 빈 칸 채우기
   const remainingCells = totalCells - (firstWeekday + lastDay);
   for (let i = 0; i < remainingCells; i++) {
     const emptyCell = document.createElement('div');
@@ -162,6 +170,7 @@ function renderCalendar(year, month) {
   }
 }
 
+// 이전 달로 이동
 prevMonthBtn?.addEventListener('click', () => {
   if (currentMonth > 6) {
     currentMonth--;
@@ -171,6 +180,7 @@ prevMonthBtn?.addEventListener('click', () => {
   }
 });
 
+// 다음 달로 이동
 nextMonthBtn?.addEventListener('click', () => {
   if (currentMonth < 7) {
     currentMonth++;
@@ -181,6 +191,7 @@ nextMonthBtn?.addEventListener('click', () => {
 });
 
 renderCalendar(currentYear, currentMonth);
+
 
 /* -------------- footer ---------------- */
 fetch('../include/footer.html')
